@@ -5582,6 +5582,7 @@ _findnodes( pnode, perl_xpath )
                 xmlNodePtr tnode;
                 owner = PmmOWNERPO(SvPROXYNODE(pnode));
 
+                EXTEND( SP, len );
                 for(i=0 ; i < len; i++){
                     /* we have to create a new instance of an objectptr.
                      * and then place the current node into the new object.
@@ -5607,7 +5608,7 @@ _findnodes( pnode, perl_xpath )
                         element = PmmNodeToSv(tnode, owner);
                     }
 
-                    XPUSHs( sv_2mortal(element) );
+                    PUSHs( sv_2mortal(element) );
                 }
             }
             xmlXPathFreeNodeSet( nodelist );
