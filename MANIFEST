@@ -123,6 +123,7 @@ t/04node.t
 t/05text.t
 t/06elements.t
 t/07dtd.t
+t/08findnodes-many.t
 t/08findnodes.t
 t/09xpath.t
 t/10ns.t
